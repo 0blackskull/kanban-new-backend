@@ -30,6 +30,8 @@ async function start() {
     })
   );
 
+  app.options("*", cors());
+
   app.use(cookieParser());
 
   app.use(express.json());
