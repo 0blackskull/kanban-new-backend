@@ -1,4 +1,4 @@
-import { db } from "../db"
+import { db } from "../db";
 import bcrypt from "bcrypt";
 
 export const createUser = async (username: string, password: string) => {
@@ -15,19 +15,19 @@ export const createUser = async (username: string, password: string) => {
       password: hash,
       createdAt: curDate,
       updatedAt: curDate,
-    })
+    });
 
     return data;
   });
-}
+};
 
 export const getUser = async (username: string) => {
   const user = await db.Users.collection.findOne({ username });
 
   return user;
-}
+};
 
 export const UserService = {
   getUser,
-  createUser
-}
+  createUser,
+};

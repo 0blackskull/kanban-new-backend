@@ -35,16 +35,17 @@ export function validatePassword(password: string) {
   return null;
 }
 
-export function createResponse(res: Response, status?: number, data?: string | object) {
+export function createResponse(
+  res: Response,
+  status?: number,
+  data?: string | object
+) {
   res.status(status || 500);
 
-  let finalData = data;
+  const finalResponse = {
+    status,
+    data,
+  };
 
-  if (typeof data == 'string') {
-    finalData = {
-      data: data,
-    }
-  }
-
-  return res.send(finalData);
+  return finalResponse ? res.send(finalResponse) : res.end();
 }
