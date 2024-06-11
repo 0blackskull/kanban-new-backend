@@ -18,7 +18,7 @@ async function start() {
 
   app.use(
     cors({
-      origin: "http://localhost:5173",
+      origin: "https://kanban-frontend-1.netlify.app/",
       credentials: true,
       exposedHeaders: [
         "Content-Type",
@@ -36,22 +36,22 @@ async function start() {
 
   app.use(express.json());
 
-  // app.use((req, res, next) => {
-  //   res.setHeader(
-  //     "Access-Control-Allow-Origin",
-  //     "https://kanban-frontend-1.netlify.app"
-  //   ); // Allow requests from frontend
-  //   res.setHeader(
-  //     "Access-Control-Allow-Methods",
-  //     "GET, POST, PUT, DELETE, OPTIONS, PATCH"
-  //   );
-  //   res.setHeader(
-  //     "Access-Control-Allow-Headers",
-  //     "Content-Type, Authorization"
-  //   );
-  //   res.setHeader("Access-Control-Allow-Credentials", "true"); // Allow cookies
-  //   next();
-  // });
+  app.use((req, res, next) => {
+    res.setHeader(
+      "Access-Control-Allow-Origin",
+      "https://kanban-frontend-1.netlify.app"
+    ); // Allow requests from frontend
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+    );
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Content-Type, Authorization"
+    );
+    res.setHeader("Access-Control-Allow-Credentials", "true"); // Allow cookies
+    next();
+  });
 
   app.use(
     express.urlencoded({
