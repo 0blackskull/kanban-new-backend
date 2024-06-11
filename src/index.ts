@@ -32,6 +32,8 @@ async function start() {
 
   app.options("*", cors());
 
+  app.use(cors());
+
   app.use(cookieParser());
 
   app.use(express.json());
