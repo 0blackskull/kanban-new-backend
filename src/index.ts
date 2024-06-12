@@ -18,7 +18,7 @@ async function start() {
 
   app.use(
     cors({
-      origin: "https://kanban-frontend-1.netlify.app/",
+      origin: "https://kanban-frontend-1.netlify.app",
       credentials: true,
       exposedHeaders: [
         "Content-Type",
