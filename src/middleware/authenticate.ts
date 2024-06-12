@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { createResponse } from "../utils";
 
 export const authenticate = (
-  req: Request,
+  req: any,
   res: Response,
   next: NextFunction
 ) => {

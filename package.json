@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.ts",
+    "start": "node dist/index.js",
     "test": "nodemon --inspect=0.0.0.0:9229 --nolazy npx ts-node src/index.ts",
     "dev": "nodemon npx ts-node src/index.ts"
   },
