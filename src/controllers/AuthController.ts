@@ -94,8 +94,9 @@ const signup = async (req: Request, res: Response) => {
       httpOnly: false,
       secure: false,
       maxAge: 24 * 60 * 60 * 1000,
-      sameSite: "lax",
-      domain: "localhost",
+      sameSite: "none",
+      // domain: "localhost",
+      domain: "kanban-frontend-1.netlify.app"
     });
 
     createResponse(res, 200, {
