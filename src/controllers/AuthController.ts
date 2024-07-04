@@ -43,7 +43,7 @@ const login = async (req: Request, res: Response) => {
       maxAge: 24 * 60 * 60 * 1000,
       sameSite: "none",
       // domain: "localhost",
-      domain: "netlify.app"
+      // domain: "netlify.app"
     });
 
     res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -97,7 +97,7 @@ const signup = async (req: Request, res: Response) => {
       maxAge: 24 * 60 * 60 * 1000,
       sameSite: "none",
       // domain: "localhost",
-      domain: "netlify.app"
+      // domain: "netlify.app"
     });
 
     createResponse(res, 200, {
