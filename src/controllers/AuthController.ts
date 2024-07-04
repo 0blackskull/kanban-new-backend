@@ -39,7 +39,7 @@ const login = async (req: Request, res: Response) => {
 
     res.cookie("token", token, {
       httpOnly: false,
-      secure: false,
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000,
       sameSite: "none",
       // domain: "localhost",
@@ -93,7 +93,7 @@ const signup = async (req: Request, res: Response) => {
 
     res.cookie("token", token, {
       httpOnly: false,
-      secure: false,
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000,
       sameSite: "none",
       // domain: "localhost",
