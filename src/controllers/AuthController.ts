@@ -38,10 +38,10 @@ const login = async (req: Request, res: Response) => {
     });
 
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
+      httpOnly: false,
+      secure: false,
       maxAge: 24 * 60 * 60 * 1000,
-      sameSite: "lax",
+      sameSite: "none",
       // domain: "localhost",
       domain: "kanban-frontend-1.netlify.app"
     });
